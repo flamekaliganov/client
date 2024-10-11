@@ -6,9 +6,10 @@ import { useAppSelector } from '@/hooks'
 import { TextButton } from '../Buttons'
 import Flex from '../Flex'
 import { HeaderStyledWrapper } from './Header.styled.tsx'
+import { Avatar } from 'antd'
 
 import avaProfileGold from '../../../../../public/avaProfileGold.svg'
-import { Avatar } from 'antd'
+import logoName from '../../../../../public/logoName.svg'
 
 interface Props {
     subheading: string
@@ -21,7 +22,7 @@ const Header: FC<Props> = () => {
 
     return (
         <HeaderStyledWrapper>
-            <h1 className="heading">АЛЁ, <br/> Калуга!</h1>
+            <img src={logoName} className='logoName' alt='logoName'/>
             {user?.isAuth ? <Flex>
                 <TextButton onClick={() => { navigate(pathsConfig.profile) }}>{user?.nick} <Avatar size='large' src={avaProfileGold}/></TextButton>
             </Flex> : <TextButton onClick={() => { navigate(pathsConfig.login) }}>

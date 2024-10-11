@@ -32,4 +32,7 @@ export const HeaderStyledWrapper = styled.header`
         align-items: center;
         justify-content: center;
     }
+    .logoName{
+        width: 100px;
+    }
 `
